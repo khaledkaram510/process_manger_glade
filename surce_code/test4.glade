@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkListStore" id="liststore1">
+    <columns>
+      <!-- column-name user -->
+      <column type="gchararray"/>
+      <!-- column-name command -->
+      <column type="gchararray"/>
+      <!-- column-name pid -->
+      <column type="gint"/>
+      <!-- column-name mem -->
+      <column type="gchararray"/>
+      <!-- column-name cpu -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkWindow" id="window">
+    <property name="can-focus">False</property>
+    <property name="border-width">7</property>
+    <property name="title" translatable="yes">My First Glade App</property>
+    <property name="window-position">center</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <child>
+      <object class="GtkBox" id="vbox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkScrolledWindow" id="scrol">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkTreeView" id="tree">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="model">liststore1</property>
+                    <signal name="button-press-event" handler="show_popup" object="pmenu" swapped="yes"/>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection" id="select">
+                        <property name="mode">browse</property>
+                        <signal name="changed" handler="selected_changed_cb" object="SIGCONT" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="SIGHUP" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="SIGINT" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="SIGKILL" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="SIGTERM" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="SIGTSTP" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="SIGUSR1" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="SIGUSR2" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="end_task" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="start" swapped="no"/>
+                        <signal name="changed" handler="selected_changed_cb" object="stop" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn"/>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="cl1">
+                        <property name="resizable">True</property>
+                        <property name="fixed-width">70</property>
+                        <property name="min-width">70</property>
+                        <property name="title" translatable="yes">user</property>
+                        <property name="alignment">0.5</property>
+                        <property name="sort-indicator">True</property>
+                        <property name="sort-column-id">0</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="ccl1"/>
+                          <attributes>
+                            <attribute name="text">0</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="cl2">
+                        <property name="resizable">True</property>
+                        <property name="fixed-width">70</property>
+                        <property name="min-width">70</property>
+                        <property name="title" translatable="yes">PID</property>
+                        <property name="alignment">0.5</property>
+                        <property name="sort-indicator">True</property>
+                        <property name="sort-column-id">2</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="ccl2"/>
+                          <attributes>
+                            <attribute name="text">2</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="cl3">
+                        <property name="resizable">True</property>
+                        <property name="fixed-width">70</property>
+                        <property name="min-width">70</property>
+                        <property name="title" translatable="yes">mem</property>
+                        <property name="alignment">0.5</property>
+                        <property name="sort-indicator">True</property>
+                        <property name="sort-column-id">3</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="ccl3"/>
+                          <attributes>
+                            <attribute name="text">3</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="cl4">
+                        <property name="resizable">True</property>
+                        <property name="fixed-width">70</property>
+                        <property name="min-width">70</property>
+                        <property name="title" translatable="yes">cpu</property>
+                        <property name="alignment">0.5</property>
+                        <property name="sort-indicator">True</property>
+                        <property name="sort-column-id">4</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="ccl4"/>
+                          <attributes>
+                            <attribute name="text">4</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="cl5">
+                        <property name="resizable">True</property>
+                        <property name="fixed-width">70</property>
+                        <property name="min-width">70</property>
+                        <property name="title" translatable="yes">command</property>
+                        <property name="alignment">0.5</property>
+                        <property name="sort-indicator">True</property>
+                        <property name="sort-column-id">1</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="ccl5"/>
+                          <attributes>
+                            <attribute name="text">1</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="hbox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-start">4</property>
+            <property name="margin-end">5</property>
+            <property name="spacing">3</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="bt2">
+                <property name="label" translatable="yes">refresh</property>
+                <property name="width-request">125</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="refresh_btn" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">3</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkMenu" id="pmenu">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkMenuItem" id="item">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="label" translatable="yes">send Signal</property>
+        <property name="use-underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="submenu">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="SIGKILL">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">SIGKILL</property>
+                <property name="use-underline">True</property>
+                <signal name="activate" handler="sigkill" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="SIGTERM">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">SIGTERM</property>
+                <property name="use-underline">True</property>
+                <signal name="activate" handler="sigterm" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="SIGTSTP">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">SIGTSTP</property>
+                <property name="use-underline">True</property>
+                <signal name="activate" handler="sigtstp" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="SIGCONT">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">SIGCONT</property>
+                <property name="use-underline">True</property>
+                <signal name="activate" handler="sigcont" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="SIGINT">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">SIGINT</property>
+                <property name="use-underline">True</property>
+                <signal name="activate" handler="sigint" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="SIGHUP">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">SIGHUP</property>
+                <property name="use-underline">True</property>
+                <signal name="activate" handler="sighup" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="SIGUSR1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">SIGUSR1</property>
+                <property name="use-underline">True</property>
+                <signal name="activate" handler="sigusr1" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="SIGUSR2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">SIGUSR2</property>
+                <property name="use-underline">True</property>
+                <signal name="activate" handler="sigusr2" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="start">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="label" translatable="yes">start</property>
+        <property name="use-underline">True</property>
+        <signal name="activate" handler="start" swapped="no"/>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="stop">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="label" translatable="yes">stop</property>
+        <property name="use-underline">True</property>
+        <signal name="activate" handler="stop" swapped="no"/>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="end_task">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="label" translatable="yes">end task</property>
+        <property name="use-underline">True</property>
+        <signal name="activate" handler="end_task" swapped="no"/>
+      </object>
+    </child>
+  </object>
+</interface>
